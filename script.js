@@ -34,15 +34,3 @@ const updateScore = winner => {
 const advanceRound = advance => {
   currentRoundNumber++;
 }
-
-updateScore('human');
-console.log(humanScore);
-
-
-
-console.log(compareGuesses(4,4,9));
-
-
-
-
-console.log(generateTarget());
