@@ -8,19 +8,22 @@ const random = Math.floor(Math.random() * 9 + 1);
 const generateTarget = (randomNumber) => {
 return random;
 };
-
 const compareGuesses = (humanGuess, computerGuess, targetNumber) => {
-   const howCloseHuman = targetNumber - humanGuess;
-   const howCloseComputer = targetNumber - computerGuess;
+  const humanDistance = Math.abs(targetNumber - humanGuess);
+  const computerDistance = Math.abs(targetNumber - computerGuess);
 
-   if (humanGuess < 0 || humanGuess > 9) {
-     return;
-   }
+  if (humanGuess < 0 || humanGuess > 9) {
+    return alert('Please choose a number between 0 & 9!');
 
-  else if (howCloseHuman <= howCloseComputer) {
-  return true;
-}
-  else {return false;}
+  }
+
+  if (humanDistance <= computerDistance) {
+    return true;
+  }
+  else {
+    return false;
+  }
+
 };
 
 const updateScore = winner => {
