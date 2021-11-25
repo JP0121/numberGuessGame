@@ -12,11 +12,6 @@ const compareGuesses = (humanGuess, computerGuess, targetNumber) => {
   const humanDistance = Math.abs(targetNumber - humanGuess);
   const computerDistance = Math.abs(targetNumber - computerGuess);
 
-  if (humanGuess < 0 || humanGuess > 9) {
-    return alert('Please choose a number between 0 & 9!');
-
-  }
-
   if (humanDistance <= computerDistance) {
     return true;
   }
