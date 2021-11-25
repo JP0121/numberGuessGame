@@ -8,19 +8,17 @@ const random = Math.floor(Math.random() * 9 + 1);
 const generateTarget = (randomNumber) => {
 return random;
 };
-
 const compareGuesses = (humanGuess, computerGuess, targetNumber) => {
-   const howCloseHuman = targetNumber - humanGuess;
-   const howCloseComputer = targetNumber - computerGuess;
+  const humanDistance = Math.abs(targetNumber - humanGuess);
+  const computerDistance = Math.abs(targetNumber - computerGuess);
 
-   if (humanGuess < 0 || humanGuess > 9) {
-     return;
-   }
+  if (humanDistance <= computerDistance) {
+    return true;
+  }
+  else {
+    return false;
+  }
 
-  else if (howCloseHuman <= howCloseComputer) {
-  return true;
-}
-  else {return false;}
 };
 
 const updateScore = winner => {
@@ -36,15 +34,3 @@ const updateScore = winner => {
 const advanceRound = advance => {
   currentRoundNumber++;
 }
-
-updateScore('human');
-console.log(humanScore);
-
-
-
-console.log(compareGuesses(4,4,9));
-
-
-
-
-console.log(generateTarget());
